@@ -51,12 +51,12 @@ public class UserService {
      * @return 如果存在当前用户，则返回true， 否则返回false
      */
     public static boolean hasUser(String username) {
-        UserManage userManage = new UserManage();
+        UserManageClient userManage = new UserManageClient();
         userManage.sendData("Exist " + username);
-        String response = userManage.response();
+        String response = userManage.response().split(" ")[0];
         userManage.closeTheConnection();
 
-        if (response.equalsIgnoreCase("true")) {
+        if (response.equalsIgnoreCase("+TRUE")) {
             return true;
         }
 
@@ -70,12 +70,12 @@ public class UserService {
      * @return 验证成功返回true，验证失败返回false
      */
     public static boolean authUser(String username, String password) {
-        UserManage userManage = new UserManage();
+        UserManageClient userManage = new UserManageClient();
         userManage.sendData("Auth " + username + ":" + password);
-        String response = userManage.response();
+        String response = userManage.response().split(" ")[0];
         userManage.closeTheConnection();
 
-        if (response.equalsIgnoreCase("true")) {
+        if (response.equalsIgnoreCase("+TRUE")) {
             isLogin = true;
             loginUser = new User(username, password);
             return true;
@@ -91,12 +91,12 @@ public class UserService {
      * @return 注册成功返回true， 注册失败返回false
      */
     public static boolean regUser(String username, String password) {
-        UserManage userManage = new UserManage();
-        userManage.sendData("Register " + username + ":" + password);
-        String response = userManage.response();
+        UserManageClient userManage = new UserManageClient();
+        userManage.sendData("Reg " + username + ":" + password);
+        String response = userManage.response().split(" ")[0];
         userManage.closeTheConnection();
 
-        if (response.equalsIgnoreCase("true")) {
+        if (response.equalsIgnoreCase("+TRUE")) {
             return true;
         }
 

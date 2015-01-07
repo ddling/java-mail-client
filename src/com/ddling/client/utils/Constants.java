@@ -26,7 +26,7 @@ public class Constants {
     // 用户管理服务器地址
     public static final String MANAGE_SERVER_ADDRESS = "127.0.0.1";
     // 用户管理服务器端口
-    public static final int MANAGE_SERVER_PORT = 1138;
+    public static final int MANAGE_SERVER_PORT = 1140;
 
     // 本地SMTP服务器地址
     public static final String LOCAL_SMTP_SERVER_ADDRESS = "127.0.0.1";

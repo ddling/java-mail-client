@@ -30,19 +30,19 @@ import java.net.Socket;
 /**
  * Created by lingdongdong on 15/1/4.
  */
-public class UserManage {
+public class UserManageClient {
 
     private Socket socket = null;
     private BufferedReader in = null;
     private PrintWriter out = null;
     private int SO_TIME_OUT = 30000;
 
-    public static Logger logger = LoggerFactory.getLogger(UserManage.class);
+    public static Logger logger = LoggerFactory.getLogger(UserManageClient.class);
 
     /**
      * 初始化用户管理Socket
      */
-    public UserManage() {
+    public UserManageClient() {
         try {
             socket = new Socket(Constants.MANAGE_SERVER_ADDRESS, Constants.MANAGE_SERVER_PORT);
             socket.setSoTimeout(SO_TIME_OUT);
