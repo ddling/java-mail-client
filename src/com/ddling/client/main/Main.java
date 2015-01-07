@@ -1,3 +1,5 @@
+package com.ddling.client.main;
+
 import com.ddling.client.gui.LoginFrame;
 
 public class Main {
